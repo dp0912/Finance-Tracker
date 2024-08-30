@@ -31,29 +31,35 @@ public class FinanceApp {
     }
 
     private static void createUser() {
-        System.out.println("Enter Name (no digits allowed):");
-        String name = scanner.nextLine();
-        if (!name.matches("[a-zA-Z\\s]+")) {
-            System.out.println("Invalid name. Only letters and spaces are allowed.");
-            return;
-        }
+        String name;
+        do {
+            System.out.println("Enter Name (no digits allowed):");
+            name = scanner.nextLine();
+            if (!name.matches("[a-zA-Z\\s]+")) {
+                System.out.println("Invalid name. Only letters and spaces are allowed.");
+            }
+        } while (!name.matches("[a-zA-Z\\s]+"));
 
         System.out.println("Enter Address:");
         String address = scanner.nextLine();
 
-        System.out.println("Enter Mobile Number (10 digits):");
-        String mobileNumber = scanner.nextLine();
-        if (!mobileNumber.matches("\\d{10}")) {
-            System.out.println("Invalid mobile number. It must be exactly 10 digits.");
-            return;
-        }
+        String mobileNumber;
+        do {
+            System.out.println("Enter Mobile Number (10 digits):");
+            mobileNumber = scanner.nextLine();
+            if (!mobileNumber.matches("\\d{10}")) {
+                System.out.println("Invalid mobile number. It must be exactly 10 digits.");
+            }
+        } while (!mobileNumber.matches("\\d{10}"));
 
-        System.out.println("Enter Annual Income (0 or greater):");
-        double income = scanner.nextDouble();
-        if (income < 0) {
-            System.out.println("Invalid income. It must be 0 or greater.");
-            return;
-        }
+        double income;
+        do {
+            System.out.println("Enter Annual Income (0 or greater):");
+            income = scanner.nextDouble();
+            if (income < 0) {
+                System.out.println("Invalid income. It must be 0 or greater.");
+            }
+        } while (income < 0);
         scanner.nextLine(); // Consume newline
 
         User user = new User(name, address, mobileNumber, income);
@@ -117,8 +123,14 @@ public class FinanceApp {
         System.out.println("Enter Expense Description:");
         String description = scanner.nextLine();
 
-        System.out.println("Enter Expense Date (e.g., YYYY-MM-DD):");
-        String date = scanner.nextLine();
+        String date;
+        do {
+            System.out.println("Enter Expense Date (YYYY-MM-DD):");
+            date = scanner.nextLine();
+            if (!date.matches("\\d{4}-\\d{2}-\\d{2}")) {
+                System.out.println("Invalid date format. It must be in YYYY-MM-DD format.");
+            }
+        } while (!date.matches("\\d{4}-\\d{2}-\\d{2}"));
 
         user.getFinanceTracker().addTransaction("Expense", amount, description, date);
         System.out.println("Expense added successfully!");
