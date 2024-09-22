@@ -42,5 +42,4 @@ The Finance Tracker App is a Java-based application that allows users to create 
 - **Annual Income**: Must be 0 or greater.
 - **Expense Date**: Must be in YYYY-MM-DD format.
 
-## Contact
-For questions or feedback, please contact [Your Name](your_email@example.com).
+
