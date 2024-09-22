@@ -1,33 +1,46 @@
-Finance Tracker App
+# Finance Tracker App
 
--> Description
+## Description
+The Finance Tracker App is a Java-based application that allows users to create accounts, track their income and expenses, and manage their financial records. It provides a simple command-line interface for managing user accounts and viewing transactions.
 
-This Java-based Finance Tracker App allows users to create accounts, track their income and expenses, and manage their financial records. The application provides a simple command-line interface to manage user accounts and view transactions.
+## Features
+- **Create New User**: Users can create a new account by entering their name, address, mobile number, and annual income.
+- **Select Existing User**: Users can select an existing account to manage their finances.
+- **Add Expense**: Users can add expenses with details including amount, description, and date.
+- **View Expenses**: Users can view all recorded transactions associated with their account.
 
--> Features
+## Getting Started
 
-Create New User: Users can create a new account with their name, address, mobile number, and annual income.
-Select Existing User: Users can select an existing account to manage their finances.
-Add Expense: Users can add expenses with details including amount, description, and date.
-View Expenses: Users can view all recorded transactions.
+### Prerequisites
+- **Java Development Kit (JDK)**: Version 8 or higher
+- A command-line interface to run the Java application
 
--> Getting Started
+### Usage
+1. **Creating a New User**: 
+   - Choose option 1 from the main menu.
+   - Enter the required details: name (no digits allowed), address, mobile number (10 digits), and annual income (0 or greater).
+2. **Selecting an Existing User**: 
+   - Choose option 2 from the main menu.
+   - Enter the user's name and mobile number.
+3. **Adding an Expense**: 
+   - After selecting a user, choose option 1 from the manage user menu.
+   - Enter the expense details: amount, description, and date (YYYY-MM-DD format).
+4. **Viewing Expenses**: 
+   - After selecting a user, choose option 2 from the manage user menu to view all recorded transactions.
+5. **Exiting**: 
+   - Choose option 3 from the main menu to quit the application.
 
-Prerequisites
-Java Development Kit (JDK) 8 or higher
-A command-line interface to run the Java application
+## Code Structure
+- `FinanceApp.java`: Main program logic for managing user accounts and transactions.
+- `User.java`: Defines the User class with methods for handling user details and financial tracking.
+- `FinanceTracker.java`: Manages the list of transactions for a user.
+- `Transaction.java`: Represents individual transactions, including type, amount, description, and date.
 
--> Usage
+## Validation Rules
+- **Name**: Only alphabetic characters are allowed.
+- **Mobile Number**: Must be exactly 10 digits.
+- **Annual Income**: Must be 0 or greater.
+- **Expense Date**: Must be in YYYY-MM-DD format.
 
-Create New User
-Choose option 1 from the main menu to create a new user.
-Enter the required details: name, address, mobile number, and annual income.
-Select Existing User
-Choose option 2 from the main menu to select an existing user.
-Enter the name and mobile number of the user.
-Manage the user’s finances by adding expenses or viewing transactions.
-Add Expense
-After selecting a user, choose option 1 from the manage user menu to add an expense.
-Enter the expense details: amount, description, and date.
-View Expenses
-After selecting a user, choose option 2 from the manage user menu to view all recorded transactions.
+## Contact
+For questions or feedback, please contact [Your Name](your_email@example.com).
